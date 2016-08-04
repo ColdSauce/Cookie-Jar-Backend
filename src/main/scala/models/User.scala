@@ -13,8 +13,7 @@ object User {
   def tupled = (User.apply _).tupled
   class UserTable(tag: Tag) extends Table[User](tag, "Users") {
     def username = column[String]("Username", O.PrimaryKey)
-    def password = column[String]("Username", O.PrimaryKey)
-    def cookies = foreignKey("cookiesFK", username,  CookieTable.cookies)(_.username)
+    def password = column[String]("Password")
     def * = (username, password) <> (User.tupled, User.unapply)
   }
   object UserTable {
