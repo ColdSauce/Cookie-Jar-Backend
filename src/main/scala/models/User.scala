@@ -5,7 +5,6 @@ package models
   */
 case class User(username: String, password: String)
 
-import models.Cookie.CookieTable
 import slick.driver.MySQLDriver.api._
 
 object User {
